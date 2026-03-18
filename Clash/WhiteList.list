@@ -1,0 +1,7 @@
+# 自定义白名单（命中后走 DIRECT）
+# 说明：按需添加你的固定 IP 或网段
+# 格式示例：
+# IP-CIDR,1.2.3.4/32,no-resolve
+# IP-CIDR,10.10.0.0/16,no-resolve
+# IP-CIDR6,2408:xxxx::/48,no-resolve
+
