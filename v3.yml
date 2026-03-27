@@ -314,13 +314,13 @@ proxy-groups:
       - __PROXY_NODES__
 rules:
   - RULE-SET,LocalAreaNetwork,🎯 全球直连
+  - RULE-SET,CLAUDEAI,🤖 ClaudeAI服务
   - RULE-SET,GOOGLEMRS,🍟 Google服务
   - RULE-SET,GOOGLEIP,🍟 Google服务
   - RULE-SET,GOOGLE,🍟 Google服务
   - RULE-SET,OPENAIMRS,🤖 OpenAI服务
   - RULE-SET,OPENAI,🤖 OpenAI服务
   - RULE-SET,GROKAI,🩻 GrokAI服务
-  - RULE-SET,CLAUDEAI,🤖 ClaudeAI服务
   - RULE-SET,OTHERAI,🤖 其他AI服务
   - RULE-SET,CiciAI,🤖 CiciAI服务
   - RULE-SET,Developer,👨‍💻 开发者
@@ -355,6 +355,12 @@ rule-providers:
     behavior: classical
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/LocalAreaNetwork.yaml
     path: ./providers/LocalAreaNetwork.yaml
+    interval: 86400
+  CLAUDEAI:
+    type: http
+    behavior: classical
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/xiaobaiyey/rules/refs/heads/main/Providers/Claude.yml
+    path: ./providers/claude.yaml
     interval: 86400
   GOOGLEMRS:
     type: http
@@ -395,12 +401,7 @@ rule-providers:
     url: https://gh-proxy.com/https://raw.githubusercontent.com/xiaobaiyey/rules/refs/heads/main/Providers/Grok.yml
     path: ./providers/grok.yaml
     interval: 86400
-  CLAUDEAI:
-    type: http
-    behavior: classical
-    url: https://gh-proxy.com/https://raw.githubusercontent.com/xiaobaiyey/rules/refs/heads/main/Providers/Claude.yml
-    path: ./providers/claude.yaml
-    interval: 86400
+
   OTHERAI:
     type: http
     behavior: classical
