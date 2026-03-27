@@ -1,0 +1,563 @@
+port: 7890
+socks-port: 7891
+allow-lan: true
+mode: rule
+log-level: info
+external-controller: 127.0.0.1:9090
+dns:
+  enable: true
+  nameserver:
+    - https://8.8.8.8/dns-query#🚀 节点选择
+  direct-nameserver:
+    - 223.5.5.5
+    - 119.29.29.29
+  nameserver-policy:
+    geosite:gfw,greatfire:
+      - https://1.1.1.1/dns-query#🚀 节点选择
+      - https://8.8.8.8/dns-query#🚀 节点选择
+    geosite:cn,private,apple,steam,onedrive,category-games@cn:
+      - 223.5.5.5
+      - 119.29.29.29
+    geosite:google:
+      - https://1.1.1.1/dns-query#🚀 节点选择
+    geosite:geolocation-!cn:
+      - https://1.1.1.1/dns-query#🚀 节点选择
+      - https://8.8.8.8/dns-query#🚀 节点选择
+  proxy-server-nameserver:
+    - 223.5.5.5
+    - 119.29.29.29
+  ipv6: true
+  listen: 0.0.0.0:7874
+  default-nameserver:
+    - 223.5.5.5
+    - 119.29.29.29
+    - https://1.1.1.1/dns-query#🚀 节点选择
+  fallback:
+    - https://1.1.1.1/dns-query#🚀 节点选择
+    - https://120.53.53.53/dns-query
+    - https://223.5.5.5/dns-query
+  use-hosts: true
+proxies: null
+proxy-groups:
+  - name: 🚀 节点选择
+    type: select
+    include-all-proxies: true
+    include-all-providers: true
+    filter: 日本|韩国|美国|香港|台湾|新加坡
+    proxies:
+      - ♻️ 自动选择
+      - __PROXY_PROVIDERS__
+      - __PROXY_NODES__
+  - name: ♻️ 自动选择
+    type: url-test
+    include-all: true
+    include-all-proxies: true
+    include-all-providers: true
+    filter: 日本|韩国|美国|香港|台湾|新加坡    
+    proxies:
+      - __PROXY_PROVIDERS__
+      - __PROXY_NODES__
+    url: https://cp.cloudflare.com/generate_204
+    interval: 300
+    tolerance: 50
+  - name: 🍟 Google服务
+    type: select
+    include-all: true
+    include-all-proxies: true
+    include-all-providers: true
+    filter: 日本|韩国|美国|香港|台湾|新加坡   
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - __PROXY_PROVIDERS__
+      - __PROXY_NODES__
+  - name: 🤖 OpenAI服务
+    type: select
+    include-all: true
+    include-all-proxies: true
+    include-all-providers: true
+    filter: 日本|韩国|美国|香港|台湾|新加坡   
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - __PROXY_PROVIDERS__
+      - __PROXY_NODES__
+  - name: 🩻 GrokAI服务
+    type: select
+    include-all: true
+    include-all-proxies: true
+    include-all-providers: true
+    filter: 日本|韩国|美国|香港|台湾|新加坡   
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - __PROXY_PROVIDERS__
+      - __PROXY_NODES__
+  - name: 🤖 ClaudeAI服务
+    type: select
+    include-all: true
+    include-all-proxies: true
+    include-all-providers: true
+    filter: 日本|韩国|美国|香港|台湾|新加坡   
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - __PROXY_PROVIDERS__
+      - __PROXY_NODES__
+  - name: 🤖 其他AI服务
+    type: select
+    include-all: true
+    include-all-proxies: true
+    include-all-providers: true
+    filter: 日本|韩国|美国|香港|台湾|新加坡   
+    proxies:
+      - 🎯 全球直连
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - __PROXY_PROVIDERS__
+      - __PROXY_NODES__
+  - name: 🤖 CiciAI服务
+    type: select
+    include-all: true
+    include-all-proxies: true
+    include-all-providers: true
+    filter: 日本|韩国|美国|香港|台湾|新加坡
+    proxies:
+      - 🎯 全球直连
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - __PROXY_PROVIDERS__
+      - __PROXY_NODES__
+  - name: 👨‍💻 开发者
+    type: select
+    include-all: true
+    include-all-proxies: true
+    include-all-providers: true
+    filter: 日本|韩国|美国|香港|台湾|新加坡
+    proxies:
+      - 🎯 全球直连
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - __PROXY_PROVIDERS__
+      - __PROXY_NODES__
+  - name: 🌐 Web3服务
+    type: select
+    include-all: true
+    include-all-proxies: true
+    include-all-providers: true
+    filter: 日本|韩国|美国|香港|台湾|新加坡
+    proxies:
+      - 🎯 全球直连
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - __PROXY_PROVIDERS__
+      - __PROXY_NODES__
+  - name: 🌍 国外媒体
+    type: select
+    include-all: true
+    include-all-proxies: true
+    include-all-providers: true
+    filter: 日本|韩国|美国|香港|台湾|新加坡
+    proxies:
+      - 🎯 全球直连
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - __PROXY_PROVIDERS__
+      - __PROXY_NODES__
+  - name: 📺 YouTube
+    type: select
+    include-all: true
+    include-all-proxies: true
+    include-all-providers: true
+    filter: 日本|韩国|美国|香港|台湾|新加坡
+    proxies:
+      - 🎯 全球直连
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - __PROXY_PROVIDERS__
+      - __PROXY_NODES__
+  - name: 🎥 Netflix
+    type: select
+    include-all: true
+    include-all-proxies: true
+    include-all-providers: true
+    filter: 日本|韩国|美国|香港|台湾|新加坡
+    proxies:
+      - 🎯 全球直连
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - __PROXY_PROVIDERS__
+      - __PROXY_NODES__
+  - name: 📺 哔哩哔哩
+    type: select
+    include-all: true
+    include-all-proxies: true
+    include-all-providers: true
+    filter: 日本|韩国|美国|香港|台湾|新加坡
+    proxies:
+      - 🎯 全球直连
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - __PROXY_PROVIDERS__
+      - __PROXY_NODES__
+  - name: 🎵 Spotify
+    type: select
+    include-all: true
+    include-all-proxies: true
+    include-all-providers: true
+    filter: 日本|韩国|美国|香港|台湾|新加坡
+    proxies:
+      - 🎯 全球直连
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - __PROXY_PROVIDERS__
+      - __PROXY_NODES__
+  - name: 💬 Discord
+    type: select
+    include-all: true
+    include-all-proxies: true
+    include-all-providers: true
+    filter: 日本|韩国|美国|香港|台湾|新加坡
+    proxies:
+      - 🎯 全球直连
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - __PROXY_PROVIDERS__
+      - __PROXY_NODES__
+  - name: 🎮 游戏平台
+    type: select
+    include-all: true
+    include-all-proxies: true
+    include-all-providers: true
+    filter: 日本|韩国|美国|香港|台湾|新加坡
+    proxies:
+      - 🎯 全球直连
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - __PROXY_PROVIDERS__
+      - __PROXY_NODES__
+  - name: 📚 教育资源
+    type: select
+    include-all: true
+    include-all-proxies: true
+    include-all-providers: true
+    filter: 日本|韩国|美国|香港|台湾|新加坡
+    proxies:
+      - 🎯 全球直连
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - __PROXY_PROVIDERS__
+      - __PROXY_NODES__
+  - name: 📲 电报信息
+    type: select
+    include-all: true
+    include-all-proxies: true
+    include-all-providers: true
+    filter: 日本|韩国|美国|香港|台湾|新加坡
+    proxies:
+      - 🎯 全球直连
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - __PROXY_PROVIDERS__
+      - __PROXY_NODES__
+  - name: Ⓜ️ 微软服务
+    type: select
+    include-all: true
+    include-all-proxies: true
+    include-all-providers: true
+    filter: 日本|韩国|美国|香港|台湾|新加坡
+    proxies:
+      - 🎯 全球直连
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - __PROXY_PROVIDERS__
+      - __PROXY_NODES__
+  - name: 🍎 苹果服务
+    type: select
+    include-all: true
+    include-all-proxies: true
+    include-all-providers: true
+    filter: 日本|韩国|美国|香港|台湾|新加坡
+    proxies:
+      - 🎯 全球直连
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - __PROXY_PROVIDERS__
+      - __PROXY_NODES__
+  - name: 🎯 全球直连
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - DIRECT
+  - name: 🛑 全球拦截
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+  - name: 🍃 应用净化
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+  - name: 🐟 漏网之鱼
+    type: select
+    include-all: true
+    include-all-proxies: true
+    include-all-providers: true
+    filter: 日本|韩国|美国|香港|台湾|新加坡
+    proxies:
+      - 🎯 全球直连
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - __PROXY_PROVIDERS__
+      - __PROXY_NODES__
+rules:
+  - RULE-SET,LocalAreaNetwork,🎯 全球直连
+  - RULE-SET,GOOGLEMRS,🍟 Google服务
+  - RULE-SET,GOOGLEIP,🍟 Google服务
+  - RULE-SET,GOOGLE,🍟 Google服务
+  - RULE-SET,OPENAIMRS,🤖 OpenAI服务
+  - RULE-SET,OPENAI,🤖 OpenAI服务
+  - RULE-SET,GROKAI,🩻 GrokAI服务
+  - RULE-SET,CLAUDEAI,🤖 ClaudeAI服务
+  - RULE-SET,OTHERAI,🤖 其他AI服务
+  - RULE-SET,CiciAI,🤖 CiciAI服务
+  - RULE-SET,Developer,👨‍💻 开发者
+  - RULE-SET,Web3,🌐 Web3服务
+  - RULE-SET,category-ads-all,🛑 全球拦截
+  - RULE-SET,BanAD,🛑 全球拦截
+  - RULE-SET,BanProgramAD,🍃 应用净化
+  - RULE-SET,GoogleCN,🎯 全球直连
+  - RULE-SET,SteamCN,🎯 全球直连
+  - RULE-SET,Microsoft,Ⓜ️ 微软服务
+  - RULE-SET,MicrosoftMRS,Ⓜ️ 微软服务
+  - RULE-SET,Apple,🍎 苹果服务
+  - RULE-SET,AppleMRS,🍎 苹果服务
+  - RULE-SET,ProxyMedia,🌍 国外媒体
+  - RULE-SET,YouTube,📺 YouTube
+  - RULE-SET,Netflix,🎥 Netflix
+  - RULE-SET,Bilibili,📺 哔哩哔哩
+  - RULE-SET,Spotify,🎵 Spotify
+  - RULE-SET,Discord,💬 Discord
+  - RULE-SET,Epic,🎮 游戏平台
+  - RULE-SET,Steam,🎮 游戏平台
+  - RULE-SET,Khan,📚 教育资源
+  - RULE-SET,Edutools,📚 教育资源
+  - RULE-SET,Telegram,📲 电报信息
+  - RULE-SET,ChinaDomain,🎯 全球直连
+  - RULE-SET,ChinaCompanyIp,🎯 全球直连
+  - GEOIP,CN,🎯 全球直连
+  - MATCH,🐟 漏网之鱼
+rule-providers:
+  LocalAreaNetwork:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/LocalAreaNetwork.yaml
+    path: ./providers/LocalAreaNetwork.yaml
+    interval: 86400
+  GOOGLEMRS:
+    type: http
+    format: mrs
+    behavior: domain
+    url: https://gh-proxy.com/https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/google.mrs
+    path: ./ruleset/google.mrs
+    interval: 86400
+  GOOGLEIP:
+    type: http
+    format: mrs
+    behavior: ipcidr
+    url: https://gh-proxy.com/https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geoip/google.mrs
+    path: ./ruleset/google-ip.mrs
+    interval: 86400
+  GOOGLE:
+    type: http
+    behavior: classical
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/xiaobaiyey/rules/refs/heads/main/Providers/Google.yml
+    path: ./providers/google.yaml
+    interval: 86400
+  OPENAIMRS:
+    type: http
+    format: mrs
+    behavior: domain
+    url: https://gh-proxy.com/https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/openai.mrs
+    path: ./ruleset/openai.mrs
+    interval: 86400
+  OPENAI:
+    type: http
+    behavior: classical
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/xiaobaiyey/rules/refs/heads/main/Providers/OpenAI.yml
+    path: ./providers/openai.yaml
+    interval: 86400
+  GROKAI:
+    type: http
+    behavior: classical
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/xiaobaiyey/rules/refs/heads/main/Providers/Grok.yml
+    path: ./providers/grok.yaml
+    interval: 86400
+  CLAUDEAI:
+    type: http
+    behavior: classical
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/xiaobaiyey/rules/refs/heads/main/Providers/Claude.yml
+    path: ./providers/claude.yaml
+    interval: 86400
+  OTHERAI:
+    type: http
+    behavior: classical
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/xiaobaiyey/rules/refs/heads/main/Providers/OtherAI.yml
+    path: ./providers/otherai.yaml
+    interval: 86400
+  CiciAI:
+    type: http
+    behavior: classical
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/xiaobaiyey/rules/refs/heads/main/Providers/CiciAi.yml
+    path: ./providers/ciciai.yaml
+    interval: 86400
+  Developer:
+    type: http
+    behavior: classical
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/xiaobaiyey/rules/refs/heads/main/Providers/Developer.yml
+    path: ./providers/developer.yaml
+    interval: 86400
+  Web3:
+    type: http
+    behavior: classical
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/xiaobaiyey/rules/refs/heads/main/Providers/Web3.yml
+    path: ./providers/web3.yaml
+    interval: 86400
+  category-ads-all:
+    type: http
+    format: mrs
+    behavior: domain
+    url: https://gh-proxy.com/https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/category-ads-all.mrs
+    path: ./ruleset/category-ads-all.mrs
+    interval: 86400
+  BanAD:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/BanAD.yaml
+    path: ./providers/BanAD.yaml
+    interval: 86400
+  BanProgramAD:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/BanProgramAD.yaml
+    path: ./providers/BanProgramAD.yaml
+    interval: 86400
+  GoogleCN:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/GoogleCNProxyIP.yaml
+    path: ./providers/GoogleCNProxyIP.yaml
+    interval: 86400
+  SteamCN:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/SteamCN.yaml
+    path: ./providers/SteamCN.yaml
+    interval: 86400
+  Microsoft:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Microsoft.yaml
+    path: ./providers/Microsoft.yaml
+    interval: 86400
+  MicrosoftMRS:
+    type: http
+    format: mrs
+    behavior: domain
+    url: https://gh-proxy.com/https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/microsoft.mrs
+    path: ./ruleset/microsoft.mrs
+    interval: 86400
+  Apple:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Apple.yaml
+    path: ./providers/Apple.yaml
+    interval: 86400
+  AppleMRS:
+    type: http
+    format: mrs
+    behavior: domain
+    url: https://gh-proxy.com/https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/apple.mrs
+    path: ./ruleset/apple.mrs
+    interval: 86400
+  ProxyMedia:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ProxyMedia.yaml
+    path: ./providers/ProxyMedia.yaml
+    interval: 86400
+  YouTube:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/YouTube.yaml
+    path: ./providers/YouTube.yaml
+    interval: 86400
+  Netflix:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Netflix.yaml
+    path: ./providers/Netflix.yaml
+    interval: 86400
+  Bilibili:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Bilibili.yaml
+    path: ./providers/Bilibili.yaml
+    interval: 86400
+  Spotify:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Spotify.yaml
+    path: ./providers/Spotify.yaml
+    interval: 86400
+  Discord:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Discord.yaml
+    path: ./providers/Discord.yaml
+    interval: 86400
+  Epic:
+    type: http
+    format: mrs
+    behavior: domain
+    url: https://gh-proxy.com/https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/epicgames.mrs
+    path: ./ruleset/epicgames.mrs
+    interval: 86400
+  Steam:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Steam.yaml
+    path: ./providers/Steam.yaml
+    interval: 86400
+  Khan:
+    type: http
+    behavior: classical
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/xiaobaiyey/rules/refs/heads/main/Providers/Khan.yml
+    path: ./providers/Khan.yaml
+    interval: 86400
+  Edutools:
+    type: http
+    behavior: classical
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/xiaobaiyey/rules/refs/heads/main/Providers/Edutools.yml
+    path: ./providers/Edutools.yaml
+    interval: 86400
+  Telegram:
+    type: http
+    behavior: classical
+    url:  https://gh-proxy.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Telegram.yaml
+    path: ./providers/Telegram.yaml
+    interval: 86400
+  ChinaDomain:
+    type: http
+    behavior: classical
+    url:  https://gh-proxy.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ChinaDomain.yaml
+    path: ./providers/ChinaDomain.yaml
+    interval: 86400
+  ChinaCompanyIp:
+    type: http
+    behavior: classical
+    url:  https://gh-proxy.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ChinaCompanyIp.yaml
+    path: ./providers/ChinaCompanyIp.yaml
+    interval: 86400
