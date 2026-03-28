@@ -362,6 +362,36 @@ rule-providers:
     url: https://gh-proxy.com/https://raw.githubusercontent.com/xiaobaiyey/rules/refs/heads/main/Providers/Claude.yml
     path: ./providers/claude.yaml
     interval: 86400
+ GOOGLE:
+    type: http
+    behavior: classical
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/xiaobaiyey/rules/refs/heads/main/Providers/Google.yml
+    path: ./providers/google.yaml
+    interval: 86400
+  OPENAI:
+    type: http
+    behavior: classical
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/xiaobaiyey/rules/refs/heads/main/Providers/OpenAI.yml
+    path: ./providers/openai.yaml
+    interval: 86400
+  OTHERAI:
+    type: http
+    behavior: classical
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/xiaobaiyey/rules/refs/heads/main/Providers/OtherAI.yml
+    path: ./providers/otherai.yaml
+    interval: 86400
+  CiciAI:
+    type: http
+    behavior: classical
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/xiaobaiyey/rules/refs/heads/main/Providers/CiciAi.yml
+    path: ./providers/ciciai.yaml
+    interval: 86400
+  GROKAI:
+    type: http
+    behavior: classical
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/xiaobaiyey/rules/refs/heads/main/Providers/Grok.yml
+    path: ./providers/grok.yaml
+    interval: 86400
   GOOGLEMRS:
     type: http
     format: mrs
@@ -376,43 +406,12 @@ rule-providers:
     url: https://gh-proxy.com/https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geoip/google.mrs
     path: ./ruleset/google-ip.mrs
     interval: 86400
-  GOOGLE:
-    type: http
-    behavior: classical
-    url: https://gh-proxy.com/https://raw.githubusercontent.com/xiaobaiyey/rules/refs/heads/main/Providers/Google.yml
-    path: ./providers/google.yaml
-    interval: 86400
   OPENAIMRS:
     type: http
     format: mrs
     behavior: domain
     url: https://gh-proxy.com/https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/openai.mrs
     path: ./ruleset/openai.mrs
-    interval: 86400
-  OPENAI:
-    type: http
-    behavior: classical
-    url: https://gh-proxy.com/https://raw.githubusercontent.com/xiaobaiyey/rules/refs/heads/main/Providers/OpenAI.yml
-    path: ./providers/openai.yaml
-    interval: 86400
-  GROKAI:
-    type: http
-    behavior: classical
-    url: https://gh-proxy.com/https://raw.githubusercontent.com/xiaobaiyey/rules/refs/heads/main/Providers/Grok.yml
-    path: ./providers/grok.yaml
-    interval: 86400
-
-  OTHERAI:
-    type: http
-    behavior: classical
-    url: https://gh-proxy.com/https://raw.githubusercontent.com/xiaobaiyey/rules/refs/heads/main/Providers/OtherAI.yml
-    path: ./providers/otherai.yaml
-    interval: 86400
-  CiciAI:
-    type: http
-    behavior: classical
-    url: https://gh-proxy.com/https://raw.githubusercontent.com/xiaobaiyey/rules/refs/heads/main/Providers/CiciAi.yml
-    path: ./providers/ciciai.yaml
     interval: 86400
   Developer:
     type: http
