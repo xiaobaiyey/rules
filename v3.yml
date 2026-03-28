@@ -55,6 +55,12 @@ proxy-groups:
     include-all-providers: true
     filter: 日本|韩国|美国|香港|台湾|新加坡    
     proxies:
+      - 🇸🇬 新加坡节点
+      - 🇭🇰 香港节点
+      - 🇹🇼 台湾节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🇺🇸 美国节点
       - __PROXY_PROVIDERS__
       - __PROXY_NODES__
     url: https://cp.cloudflare.com/generate_204
@@ -69,6 +75,12 @@ proxy-groups:
     proxies:
       - 🚀 节点选择
       - ♻️ 自动选择
+      - 🇸🇬 新加坡节点
+      - 🇭🇰 香港节点
+      - 🇹🇼 台湾节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🇺🇸 美国节点
       - __PROXY_PROVIDERS__
       - __PROXY_NODES__
   - name: 🤖 OpenAI服务
@@ -80,6 +92,12 @@ proxy-groups:
     proxies:
       - 🚀 节点选择
       - ♻️ 自动选择
+      - 🇸🇬 新加坡节点
+      - 🇭🇰 香港节点
+      - 🇹🇼 台湾节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🇺🇸 美国节点
       - __PROXY_PROVIDERS__
       - __PROXY_NODES__
   - name: 🩻 GrokAI服务
@@ -91,6 +109,12 @@ proxy-groups:
     proxies:
       - 🚀 节点选择
       - ♻️ 自动选择
+      - 🇸🇬 新加坡节点
+      - 🇭🇰 香港节点
+      - 🇹🇼 台湾节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🇺🇸 美国节点      
       - __PROXY_PROVIDERS__
       - __PROXY_NODES__
   - name: 🤖 ClaudeAI服务
@@ -114,6 +138,30 @@ proxy-groups:
       - 🎯 全球直连
       - 🚀 节点选择
       - ♻️ 自动选择
+      - 🇸🇬 新加坡节点
+      - 🇭🇰 香港节点
+      - 🇹🇼 台湾节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🇺🇸 美国节点
+      - __PROXY_PROVIDERS__
+      - __PROXY_NODES__
+  - name: 🤖 EdgeCopilot
+    type: select
+    include-all: true
+    include-all-proxies: true
+    include-all-providers: true
+    filter: 日本|韩国|美国|香港|台湾|新加坡
+    proxies:
+      - 🎯 全球直连
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🇸🇬 新加坡节点
+      - 🇭🇰 香港节点
+      - 🇹🇼 台湾节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🇺🇸 美国节点
       - __PROXY_PROVIDERS__
       - __PROXY_NODES__
   - name: 🤖 CiciAI服务
@@ -126,6 +174,12 @@ proxy-groups:
       - 🎯 全球直连
       - 🚀 节点选择
       - ♻️ 自动选择
+      - 🇸🇬 新加坡节点
+      - 🇭🇰 香港节点
+      - 🇹🇼 台湾节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🇺🇸 美国节点
       - __PROXY_PROVIDERS__
       - __PROXY_NODES__
   - name: 👨‍💻 开发者
@@ -138,6 +192,12 @@ proxy-groups:
       - 🎯 全球直连
       - 🚀 节点选择
       - ♻️ 自动选择
+      - 🇸🇬 新加坡节点
+      - 🇭🇰 香港节点
+      - 🇹🇼 台湾节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🇺🇸 美国节点
       - __PROXY_PROVIDERS__
       - __PROXY_NODES__
   - name: 🌐 Web3服务
@@ -150,6 +210,12 @@ proxy-groups:
       - 🎯 全球直连
       - 🚀 节点选择
       - ♻️ 自动选择
+      - 🇸🇬 新加坡节点
+      - 🇭🇰 香港节点
+      - 🇹🇼 台湾节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🇺🇸 美国节点
       - __PROXY_PROVIDERS__
       - __PROXY_NODES__
   - name: 🌍 国外媒体
@@ -162,6 +228,12 @@ proxy-groups:
       - 🎯 全球直连
       - 🚀 节点选择
       - ♻️ 自动选择
+      - 🇸🇬 新加坡节点
+      - 🇭🇰 香港节点
+      - 🇹🇼 台湾节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🇺🇸 美国节点
       - __PROXY_PROVIDERS__
       - __PROXY_NODES__
   - name: 📺 YouTube
@@ -174,6 +246,12 @@ proxy-groups:
       - 🎯 全球直连
       - 🚀 节点选择
       - ♻️ 自动选择
+      - 🇸🇬 新加坡节点
+      - 🇭🇰 香港节点
+      - 🇹🇼 台湾节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🇺🇸 美国节点
       - __PROXY_PROVIDERS__
       - __PROXY_NODES__
   - name: 🎥 Netflix
@@ -186,6 +264,12 @@ proxy-groups:
       - 🎯 全球直连
       - 🚀 节点选择
       - ♻️ 自动选择
+      - 🇸🇬 新加坡节点
+      - 🇭🇰 香港节点
+      - 🇹🇼 台湾节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🇺🇸 美国节点
       - __PROXY_PROVIDERS__
       - __PROXY_NODES__
   - name: 📺 哔哩哔哩
@@ -198,6 +282,12 @@ proxy-groups:
       - 🎯 全球直连
       - 🚀 节点选择
       - ♻️ 自动选择
+      - 🇸🇬 新加坡节点
+      - 🇭🇰 香港节点
+      - 🇹🇼 台湾节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🇺🇸 美国节点
       - __PROXY_PROVIDERS__
       - __PROXY_NODES__
   - name: 🎵 Spotify
@@ -210,6 +300,12 @@ proxy-groups:
       - 🎯 全球直连
       - 🚀 节点选择
       - ♻️ 自动选择
+      - 🇸🇬 新加坡节点
+      - 🇭🇰 香港节点
+      - 🇹🇼 台湾节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🇺🇸 美国节点
       - __PROXY_PROVIDERS__
       - __PROXY_NODES__
   - name: 💬 Discord
@@ -222,6 +318,12 @@ proxy-groups:
       - 🎯 全球直连
       - 🚀 节点选择
       - ♻️ 自动选择
+      - 🇸🇬 新加坡节点
+      - 🇭🇰 香港节点
+      - 🇹🇼 台湾节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🇺🇸 美国节点
       - __PROXY_PROVIDERS__
       - __PROXY_NODES__
   - name: 🎮 游戏平台
@@ -234,6 +336,12 @@ proxy-groups:
       - 🎯 全球直连
       - 🚀 节点选择
       - ♻️ 自动选择
+      - 🇸🇬 新加坡节点
+      - 🇭🇰 香港节点
+      - 🇹🇼 台湾节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🇺🇸 美国节点
       - __PROXY_PROVIDERS__
       - __PROXY_NODES__
   - name: 📚 教育资源
@@ -246,6 +354,12 @@ proxy-groups:
       - 🎯 全球直连
       - 🚀 节点选择
       - ♻️ 自动选择
+      - 🇸🇬 新加坡节点
+      - 🇭🇰 香港节点
+      - 🇹🇼 台湾节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🇺🇸 美国节点
       - __PROXY_PROVIDERS__
       - __PROXY_NODES__
   - name: 📲 电报信息
@@ -258,6 +372,12 @@ proxy-groups:
       - 🎯 全球直连
       - 🚀 节点选择
       - ♻️ 自动选择
+      - 🇸🇬 新加坡节点
+      - 🇭🇰 香港节点
+      - 🇹🇼 台湾节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🇺🇸 美国节点 
       - __PROXY_PROVIDERS__
       - __PROXY_NODES__
   - name: Ⓜ️ 微软服务
@@ -270,6 +390,12 @@ proxy-groups:
       - 🎯 全球直连
       - 🚀 节点选择
       - ♻️ 自动选择
+      - 🇸🇬 新加坡节点
+      - 🇭🇰 香港节点
+      - 🇹🇼 台湾节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🇺🇸 美国节点
       - __PROXY_PROVIDERS__
       - __PROXY_NODES__
   - name: 🍎 苹果服务
@@ -282,6 +408,12 @@ proxy-groups:
       - 🎯 全球直连
       - 🚀 节点选择
       - ♻️ 自动选择
+      - 🇸🇬 新加坡节点
+      - 🇭🇰 香港节点
+      - 🇹🇼 台湾节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🇺🇸 美国节点
       - __PROXY_PROVIDERS__
       - __PROXY_NODES__
   - name: 🎯 全球直连
@@ -310,14 +442,76 @@ proxy-groups:
       - 🎯 全球直连
       - 🚀 节点选择
       - ♻️ 自动选择
+      - 🇸🇬 新加坡节点
+      - 🇭🇰 香港节点
+      - 🇹🇼 台湾节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🇺🇸 美国节点
       - __PROXY_PROVIDERS__
       - __PROXY_NODES__
+  - name: 🇸🇬 新加坡节点
+    type: select
+    include-all: true
+    include-all-proxies: true
+    include-all-providers: true
+    filter: 新加坡
+    proxies:
+      - __PROXY_PROVIDERS__
+      - __PROXY_NODES__
+  - name: 🇭🇰 香港节点
+    type: select
+    include-all: true
+    include-all-proxies: true
+    include-all-providers: true
+    filter: 香港
+    proxies:
+      - __PROXY_PROVIDERS__
+      - __PROXY_NODES__
+  - name: 🇹🇼 台湾节点
+    type: select
+    include-all: true
+    include-all-proxies: true
+    include-all-providers: true
+    filter: 台湾
+    proxies:
+      - __PROXY_PROVIDERS__
+      - __PROXY_NODES__
+  - name: 🇯🇵 日本节点
+    type: select
+    include-all: true
+    include-all-proxies: true
+    include-all-providers: true
+    filter: 日本
+    proxies:
+      - __PROXY_PROVIDERS__
+      - __PROXY_NODES__
+  - name: 🇰🇷 韩国节点 
+    type: select
+    include-all: true
+    include-all-proxies: true
+    include-all-providers: true
+    filter: 日本
+    proxies:
+      - __PROXY_PROVIDERS__
+      - __PROXY_NODES__
+  - name: 🇺🇸 美国节点
+    type: select
+    include-all: true
+    include-all-proxies: true
+    include-all-providers: true
+    filter: 美国
+    proxies:
+      - __PROXY_PROVIDERS__
+      - __PROXY_NODES__
+
 rules:
   - RULE-SET,LocalAreaNetwork,🎯 全球直连
   - RULE-SET,CLAUDEAI,🤖 ClaudeAI服务
   - RULE-SET,GOOGLE,🍟 Google服务
   - RULE-SET,OPENAI,🤖 OpenAI服务
   - RULE-SET,GROKAI,🩻 GrokAI服务
+  - RULE-SET,EDGEcopilot,🤖 EdgeCopilot
   - RULE-SET,OTHERAI,🤖 其他AI服务
   - RULE-SET,CiciAI,🤖 CiciAI服务
   - RULE-SET,GOOGLEMRS,🍟 Google服务
@@ -391,6 +585,12 @@ rule-providers:
     behavior: classical
     url: https://gh-proxy.com/https://raw.githubusercontent.com/xiaobaiyey/rules/refs/heads/main/Providers/Grok.yml
     path: ./providers/grok.yaml
+    interval: 86400
+  EDGEcopilot:
+    type: http
+    behavior: classical
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/xiaobaiyey/rules/refs/heads/main/Providers/EdgeCopilot.yml
+    path: ./providers/edgecopilot.yaml
     interval: 86400
   GOOGLEMRS:
     type: http
