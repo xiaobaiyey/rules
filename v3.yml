@@ -362,7 +362,7 @@ rule-providers:
     url: https://gh-proxy.com/https://raw.githubusercontent.com/xiaobaiyey/rules/refs/heads/main/Providers/Claude.yml
     path: ./providers/claude.yaml
     interval: 86400
- GOOGLE:
+  GOOGLE:
     type: http
     behavior: classical
     url: https://gh-proxy.com/https://raw.githubusercontent.com/xiaobaiyey/rules/refs/heads/main/Providers/Google.yml
