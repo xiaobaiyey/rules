@@ -315,14 +315,14 @@ proxy-groups:
 rules:
   - RULE-SET,LocalAreaNetwork,🎯 全球直连
   - RULE-SET,CLAUDEAI,🤖 ClaudeAI服务
-  - RULE-SET,GOOGLEMRS,🍟 Google服务
-  - RULE-SET,GOOGLEIP,🍟 Google服务
   - RULE-SET,GOOGLE,🍟 Google服务
-  - RULE-SET,OPENAIMRS,🤖 OpenAI服务
   - RULE-SET,OPENAI,🤖 OpenAI服务
   - RULE-SET,GROKAI,🩻 GrokAI服务
   - RULE-SET,OTHERAI,🤖 其他AI服务
   - RULE-SET,CiciAI,🤖 CiciAI服务
+  - RULE-SET,GOOGLEMRS,🍟 Google服务
+  - RULE-SET,GOOGLEIP,🍟 Google服务
+  - RULE-SET,OPENAIMRS,🤖 OpenAI服务
   - RULE-SET,Developer,👨‍💻 开发者
   - RULE-SET,Web3,🌐 Web3服务
   - RULE-SET,category-ads-all,🛑 全球拦截
