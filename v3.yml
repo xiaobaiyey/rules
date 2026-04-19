@@ -43,7 +43,7 @@ proxy-groups:
     type: select
     include-all-proxies: true
     include-all-providers: true
-    filter: 日本|韩国|美国|香港|台湾|新加坡
+    filter: 香港|台湾
     proxies:
       - ♻️ 自动选择
       - __PROXY_PROVIDERS__
@@ -53,7 +53,7 @@ proxy-groups:
     include-all: true
     include-all-proxies: true
     include-all-providers: true
-    filter: 日本|韩国|美国|香港|台湾|新加坡    
+    filter: 日本|韩国|美国|香港|台湾|新加坡
     proxies:
       - 🇸🇬 新加坡节点
       - 🇭🇰 香港节点
@@ -71,7 +71,7 @@ proxy-groups:
     include-all: true
     include-all-proxies: true
     include-all-providers: true
-    filter: 日本|韩国|美国|香港|台湾|新加坡   
+    filter: 日本|韩国|美国|香港|台湾|新加坡
     proxies:
       - 🚀 节点选择
       - ♻️ 自动选择
@@ -83,12 +83,13 @@ proxy-groups:
       - 🇺🇸 美国节点
       - __PROXY_PROVIDERS__
       - __PROXY_NODES__
+      - 家宽
   - name: 🤖 OpenAI服务
     type: select
     include-all: true
     include-all-proxies: true
     include-all-providers: true
-    filter: 日本|韩国|美国|香港|台湾|新加坡   
+    filter: 日本|韩国|美国|香港|台湾|新加坡
     proxies:
       - 🚀 节点选择
       - ♻️ 自动选择
@@ -100,12 +101,13 @@ proxy-groups:
       - 🇺🇸 美国节点
       - __PROXY_PROVIDERS__
       - __PROXY_NODES__
+      - 家宽
   - name: 🩻 GrokAI服务
     type: select
     include-all: true
     include-all-proxies: true
     include-all-providers: true
-    filter: 日本|韩国|美国|香港|台湾|新加坡   
+    filter: 日本|韩国|美国|香港|台湾|新加坡
     proxies:
       - 🚀 节点选择
       - ♻️ 自动选择
@@ -114,26 +116,28 @@ proxy-groups:
       - 🇹🇼 台湾节点
       - 🇯🇵 日本节点
       - 🇰🇷 韩国节点
-      - 🇺🇸 美国节点      
+      - 🇺🇸 美国节点
       - __PROXY_PROVIDERS__
       - __PROXY_NODES__
+      - 家宽
   - name: 🤖 ClaudeAI服务
     type: select
     include-all: true
     include-all-proxies: true
     include-all-providers: true
-    filter: 日本|韩国|美国|香港|台湾|新加坡   
+    filter: 日本|韩国|美国|香港|台湾|新加坡
     proxies:
       - 🚀 节点选择
       - ♻️ 自动选择
       - __PROXY_PROVIDERS__
       - __PROXY_NODES__
+      - 家宽
   - name: 🤖 其他AI服务
     type: select
     include-all: true
     include-all-proxies: true
     include-all-providers: true
-    filter: 日本|韩国|美国|香港|台湾|新加坡   
+    filter: 日本|韩国|美国|香港|台湾|新加坡
     proxies:
       - 🎯 全球直连
       - 🚀 节点选择
@@ -146,6 +150,7 @@ proxy-groups:
       - 🇺🇸 美国节点
       - __PROXY_PROVIDERS__
       - __PROXY_NODES__
+      - 家宽
   - name: 🤖 EdgeCopilot
     type: select
     include-all: true
@@ -182,22 +187,21 @@ proxy-groups:
       - 🇺🇸 美国节点
       - __PROXY_PROVIDERS__
       - __PROXY_NODES__
+      - 家宽
   - name: 👨‍💻 开发者
     type: select
     include-all: true
     include-all-proxies: true
     include-all-providers: true
-    filter: 日本|韩国|美国|香港|台湾|新加坡
+    filter: 日本|韩国|香港|新加坡
     proxies:
       - 🎯 全球直连
       - 🚀 节点选择
       - ♻️ 自动选择
       - 🇸🇬 新加坡节点
       - 🇭🇰 香港节点
-      - 🇹🇼 台湾节点
       - 🇯🇵 日本节点
       - 🇰🇷 韩国节点
-      - 🇺🇸 美国节点
       - __PROXY_PROVIDERS__
       - __PROXY_NODES__
   - name: 🌐 Web3服务
@@ -377,7 +381,7 @@ proxy-groups:
       - 🇹🇼 台湾节点
       - 🇯🇵 日本节点
       - 🇰🇷 韩国节点
-      - 🇺🇸 美国节点 
+      - 🇺🇸 美国节点
       - __PROXY_PROVIDERS__
       - __PROXY_NODES__
   - name: Ⓜ️ 微软服务
@@ -486,15 +490,18 @@ proxy-groups:
     proxies:
       - __PROXY_PROVIDERS__
       - __PROXY_NODES__
-  - name: 🇰🇷 韩国节点 
-    type: select
+  - name: 🇰🇷 韩国节点
+    type: url-test
     include-all: true
     include-all-proxies: true
     include-all-providers: true
-    filter: 日本
+    filter: 韩国
     proxies:
       - __PROXY_PROVIDERS__
       - __PROXY_NODES__
+    url: https://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
   - name: 🇺🇸 美国节点
     type: select
     include-all: true
@@ -504,9 +511,18 @@ proxy-groups:
     proxies:
       - __PROXY_PROVIDERS__
       - __PROXY_NODES__
-
+  - name: 家宽
+    type: select
+    include-all: true
+    include-all-proxies: true
+    include-all-providers: true
+    filter: 家宽
+    proxies:
+      - __PROXY_PROVIDERS__
+      - __PROXY_NODES__
 rules:
   - RULE-SET,LocalAreaNetwork,🎯 全球直连
+  - RULE-SET,Direct_Rules,🎯 全球直连
   - RULE-SET,CLAUDEAI,🤖 ClaudeAI服务
   - RULE-SET,GOOGLE,🍟 Google服务
   - RULE-SET,OPENAI,🤖 OpenAI服务
@@ -752,18 +768,18 @@ rule-providers:
   Telegram:
     type: http
     behavior: classical
-    url:  https://gh-proxy.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Telegram.yaml
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Telegram.yaml
     path: ./providers/Telegram.yaml
     interval: 86400
   ChinaDomain:
     type: http
     behavior: classical
-    url:  https://gh-proxy.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ChinaDomain.yaml
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ChinaDomain.yaml
     path: ./providers/ChinaDomain.yaml
     interval: 86400
   ChinaCompanyIp:
     type: http
     behavior: classical
-    url:  https://gh-proxy.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ChinaCompanyIp.yaml
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ChinaCompanyIp.yaml
     path: ./providers/ChinaCompanyIp.yaml
     interval: 86400
