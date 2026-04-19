@@ -550,6 +550,12 @@ rule-providers:
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/LocalAreaNetwork.yaml
     path: ./providers/LocalAreaNetwork.yaml
     interval: 86400
+  Direct_Rules:
+    type: http
+    behavior: classical
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/xiaobaiyey/rules/refs/heads/main/Providers/Direct.yml
+    path: ./providers/direct.yaml
+    interval: 86400
   CLAUDEAI:
     type: http
     behavior: classical
