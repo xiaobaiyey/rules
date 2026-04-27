@@ -6,37 +6,194 @@ log-level: info
 external-controller: 127.0.0.1:9090
 dns:
   enable: true
-  nameserver:
-    - https://8.8.8.8/dns-query#🚀 节点选择
-  direct-nameserver:
-    - 223.5.5.5
-    - 119.29.29.29
-  nameserver-policy:
-    geosite:gfw,greatfire:
-      - https://1.1.1.1/dns-query#🚀 节点选择
-      - https://8.8.8.8/dns-query#🚀 节点选择
-    geosite:cn,private,apple,steam,onedrive,category-games@cn:
-      - 223.5.5.5
-      - 119.29.29.29
-    geosite:google:
-      - https://1.1.1.1/dns-query#🚀 节点选择
-    geosite:geolocation-!cn:
-      - https://1.1.1.1/dns-query#🚀 节点选择
-      - https://8.8.8.8/dns-query#🚀 节点选择
-  proxy-server-nameserver:
-    - 223.5.5.5
-    - 119.29.29.29
-  ipv6: true
-  listen: 0.0.0.0:7874
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  use-hosts: true
+
+  # 仅用于解析代理节点域名、DoH 域名本身
+  # 用国内 UDP，速度快，避免影响国内访问体验
   default-nameserver:
     - 223.5.5.5
     - 119.29.29.29
-    - https://1.1.1.1/dns-query#🚀 节点选择
+
+  # 代理节点域名解析
+  # 如果你的节点域名被污染，再改成 DoH；正常情况下 UDP 更快
+  proxy-server-nameserver:
+    - 223.5.5.5
+    - 119.29.29.29
+  direct-nameserver:
+    - 223.5.5.5
+    - 119.29.29.29
+  direct-nameserver-follow-policy: true
+
+  nameserver-policy:
+    # 本地网络和私有域名
+    "rule-set:LocalAreaNetwork":
+      - 223.5.5.5
+      - 119.29.29.29
+
+    # 直连规则
+    "rule-set:Direct_Rules":
+      - 223.5.5.5
+      - 119.29.29.29
+
+    # 国内服务和游戏
+    "geosite:cn,apple,steam,onedrive,category-games@cn":
+      - 223.5.5.5
+      - 119.29.29.29
+
+    # 私有 IP 地址和本地域名
+    "geosite:private":
+      - 223.5.5.5
+      - 119.29.29.29
+
+    # 国内主要互联网服务
+    "geosite:alibaba,tencent,baidu,bytedance":
+      - 223.5.5.5
+      - 119.29.29.29
+
+  # 默认 DNS：国外域名通过代理 DoH 查询
+  # 用域名版 DoH，比 https://1.1.1.1/dns-query / https://8.8.8.8/dns-query 更稳
+  nameserver:
+    - "https://cloudflare-dns.com/dns-query#🚀 节点选择"
+    - "https://dns.google/dns-query#🚀 节点选择"
+    - "https://dns.quad9.net/dns-query#🚀 节点选择"
+
+  # fallback 也只放国外 DoH，避免国外域名回落到国内 DNS
   fallback:
-    - https://1.1.1.1/dns-query#🚀 节点选择
-    - https://120.53.53.53/dns-query
-    - https://223.5.5.5/dns-query
-  use-hosts: true
+    - "https://cloudflare-dns.com/dns-query#🚀 节点选择"
+    - "https://dns.google/dns-query#🚀 节点选择"
+    - "https://dns.quad9.net/dns-query#🚀 节点选择"
+
+  # 非 CN 结果优先用 fallback，避免国外域名被国内 DNS 污染
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+    ipcidr:
+      - 0.0.0.0/8
+      - 10.0.0.0/8
+      - 100.64.0.0/10
+      - 127.0.0.0/8
+      - 169.254.0.0/16
+      - 172.16.0.0/12
+      - 192.168.0.0/16
+      - 224.0.0.0/4
+      - 240.0.0.0/4
+    domain:
+      # Google 服务
+      - +.google.com
+      - +.googleapis.com
+      - +.gstatic.com
+      - +.google-analytics.com
+      # YouTube 相关
+      - +.youtube.com
+      - +.ytimg.com
+      - +.yt.be
+      # Meta 服务
+      - +.facebook.com
+      - +.fbcdn.net
+      - +.instagram.com
+      - +.whatsapp.com
+      # Twitter/X
+      - +.twitter.com
+      - +.x.com
+      - +.twimg.com
+      # OpenAI/ChatGPT
+      - +.openai.com
+      - +.chatgpt.com
+      - +.oai.azure.com
+      # GitHub
+      - +.github.com
+      - +.githubusercontent.com
+      - +.githubassets.com
+      # Telegram
+      - +.telegram.org
+      - +.t.me
+      # Cloudflare
+      - +.cloudflare.com
+      # Amazon AWS
+      - +.amazonaws.com
+      - +.aws.amazon.com
+      # Microsoft services
+      - +.microsoft.com
+      - +.outlook.com
+      - +.live.com
+      - +.onedrive.com
+      - +.sharepoint.com
+      - +.office365.com
+      # Netflix
+      - +.netflix.com
+      - +.nflxext.com
+      - +.nflximg.net
+      - +.nflxvideo.net
+      # Discord
+      - +.discord.com
+      - +.discordapp.com
+      - +.discord.gg
+      # Spotify
+      - +.spotify.com
+      - +.spotifycdn.com
+      # 其他常见国外服务
+      - +.dropbox.com
+      - +.slack.com
+      - +.notion.so
+      - +.wikipedia.org
+
+  fake-ip-filter:
+    # 本地 TLD
+    - '*.lan'
+    - '*.local'
+    - '*.localhost'
+    - 'localhost'
+    - 'localhost.*'
+    
+    # 路由器管理界面
+    - 'router.asus.com'
+    - 'miwifi.com'
+    - 'tplogin.cn'
+    - 'tendawifi.com'
+    - 'my.router'
+    - 'wifi.cmcc'
+    - '*.routerlogin.com'
+    
+    # 游戏平台本地服务
+    - 'battlenet.com.cn'
+    - 'blzstatic.cn'
+    
+    # Apple 时间同步（防止时间偏差）
+    - 'time.*.apple.com'
+    - 'time.apple.com'
+    
+    # 音视频流媒体本地缓存
+    - 'music.163.com'
+    - 'musicapi.taihe.com'
+    - '*.music.163.com'
+    - '*.music.126.net'
+    - '126.net'
+    - '*.126.net'
+    - '*.127.net'
+    - '*.netease.com'
+    
+    # 国内 CDN 和加速服务
+    - '+.alicdn.com'
+    - '+.qiniu.com'
+    - '+.cloudcdn.net'
+    
+    # NTP 时间服务器
+    - 'ntp.ubuntu.com'
+    - 'ntp1.aliyun.com'
+    - '*.ntp.org.cn'
+    
+    # 内网地址识别
+    - '+.internal'
+    - '+.intranet'
+    - '+.corp'
+    - '+.company'
+    
+    # 智能硬件设备
+    - 'cast.google.com'
+    - 'chromecast.local'
+    - '*.smartdevices.com'
 proxies: null
 proxy-groups:
   - name: 🚀 节点选择
@@ -578,6 +735,12 @@ rule-providers:
     url: https://gh-proxy.com/https://raw.githubusercontent.com/xiaobaiyey/rules/refs/heads/main/Providers/Claude.yml
     path: ./providers/claude.yaml
     interval: 86400
+  YouTube:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/YouTube.yaml
+    path: ./providers/YouTube.yaml
+    interval: 86400
   GOOGLE:
     type: http
     behavior: classical
@@ -709,12 +872,6 @@ rule-providers:
     behavior: classical
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ProxyMedia.yaml
     path: ./providers/ProxyMedia.yaml
-    interval: 86400
-  YouTube:
-    type: http
-    behavior: classical
-    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/YouTube.yaml
-    path: ./providers/YouTube.yaml
     interval: 86400
   Netflix:
     type: http
