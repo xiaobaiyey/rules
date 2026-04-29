@@ -1,16 +1,49 @@
 payload:
+  # > 核心域名与 API
   - DOMAIN-KEYWORD,anthropic
-  - PROCESS-NAME,Claude
-  - PROCESS-NAME,Claude Helper
   - DOMAIN-KEYWORD,claude
   - DOMAIN-SUFFIX,anthropic.com
   - DOMAIN-SUFFIX,claude.ai
-  - DOMAIN-SUFFIX,usefathom.com
-  - DOMAIN-SUFFIX,console.anthropic.com
   - DOMAIN-SUFFIX,claude.com
-  - DOMAIN-SUFFIX,claudeusercontent.com
+  - DOMAIN-SUFFIX,clau.de
   - DOMAIN-SUFFIX,api.anthropic.com
   - DOMAIN-SUFFIX,models.anthropic.com
   - DOMAIN-SUFFIX,auth.anthropic.com
+  - DOMAIN-SUFFIX,console.anthropic.com
+  
+  # > Claude MCP (Model Context Protocol) 相关
+  - DOMAIN-SUFFIX,claudemcpclient.com
+  - DOMAIN-SUFFIX,claudemcpcontent.com
+  
+  # > 静态资源与内容分发 (CDN)
+  - DOMAIN-SUFFIX,claudeusercontent.com
+  - DOMAIN,servd-anthropic-website.b-cdn.net
+  - DOMAIN,anthropic.com.cdn.cloudflare.net
+  - DOMAIN,anthropic-com.ghost.io
+  
+  # > 认证与第三方组件
+  - DOMAIN,anthropic.auth0.com
+  - DOMAIN-SUFFIX,usefathom.com
+  - DOMAIN,cdn.usefathom.com
+  - DOMAIN-SUFFIX,intercom.io
+  - DOMAIN-SUFFIX,intercomcdn.com
+  
+  # > 监控、遥测与反欺诈 (按需保留)
+  - DOMAIN-SUFFIX,sentry.io
+  - DOMAIN-SUFFIX,statsigapi.net
+  - DOMAIN-KEYWORD,datadog
+  - DOMAIN,browser-intake-us5-datadoghq.com
+  - DOMAIN-KEYWORD,sift
+  
+  # > 进程匹配 (仅限客户端)
+  - PROCESS-NAME,Claude
+  - PROCESS-NAME,Claude Helper
+  
+  # > 网络协议优化 (解决 WebRTC/UDP 导致的安全风险)
   - AND,((DOMAIN-SUFFIX,claude.ai),(NETWORK,udp)),REJECT
   - AND,((DOMAIN-SUFFIX,anthropic.com),(NETWORK,udp)),REJECT
+
+  # > IP 段与 ASN 兜底
+  - IP-CIDR,160.79.104.0/21,no-resolve
+  - IP-CIDR6,2607:6bc0::/32,no-resolve
+  - IP-ASN,399358,no-resolve
