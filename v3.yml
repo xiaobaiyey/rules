@@ -726,13 +726,13 @@ rule-providers:
   Direct_Rules:
     type: http
     behavior: classical
-    url: https://gh-proxy.com/https://raw.githubusercontent.com/xiaobaiyey/rules/refs/heads/main/Providers/Direct.yml
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/g2x-cmd/rules/refs/heads/main/Providers/Direct.yml
     path: ./providers/direct.yaml
     interval: 86400
   CLAUDEAI:
     type: http
     behavior: classical
-    url: https://gh-proxy.com/https://raw.githubusercontent.com/xiaobaiyey/rules/refs/heads/main/Providers/Claude.yml
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/g2x-cmd/rules/refs/heads/main/Providers/Claude.yml
     path: ./providers/claude.yaml
     interval: 86400
   YouTube:
@@ -744,37 +744,37 @@ rule-providers:
   GOOGLE:
     type: http
     behavior: classical
-    url: https://gh-proxy.com/https://raw.githubusercontent.com/xiaobaiyey/rules/refs/heads/main/Providers/Google.yml
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/g2x-cmd/rules/refs/heads/main/Providers/Google.yml
     path: ./providers/google.yaml
     interval: 86400
   OPENAI:
     type: http
     behavior: classical
-    url: https://gh-proxy.com/https://raw.githubusercontent.com/xiaobaiyey/rules/refs/heads/main/Providers/OpenAI.yml
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/g2x-cmd/rules/refs/heads/main/Providers/OpenAI.yml
     path: ./providers/openai.yaml
     interval: 86400
   OTHERAI:
     type: http
     behavior: classical
-    url: https://gh-proxy.com/https://raw.githubusercontent.com/xiaobaiyey/rules/refs/heads/main/Providers/OtherAI.yml
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/g2x-cmd/rules/refs/heads/main/Providers/OtherAI.yml
     path: ./providers/otherai.yaml
     interval: 86400
   CiciAI:
     type: http
     behavior: classical
-    url: https://gh-proxy.com/https://raw.githubusercontent.com/xiaobaiyey/rules/refs/heads/main/Providers/CiciAi.yml
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/g2x-cmd/rules/refs/heads/main/Providers/CiciAi.yml
     path: ./providers/ciciai.yaml
     interval: 86400
   GROKAI:
     type: http
     behavior: classical
-    url: https://gh-proxy.com/https://raw.githubusercontent.com/xiaobaiyey/rules/refs/heads/main/Providers/Grok.yml
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/g2x-cmd/rules/refs/heads/main/Providers/Grok.yml
     path: ./providers/grok.yaml
     interval: 86400
   EDGEcopilot:
     type: http
     behavior: classical
-    url: https://gh-proxy.com/https://raw.githubusercontent.com/xiaobaiyey/rules/refs/heads/main/Providers/EdgeCopilot.yml
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/g2x-cmd/rules/refs/heads/main/Providers/EdgeCopilot.yml
     path: ./providers/edgecopilot.yaml
     interval: 86400
   GOOGLEMRS:
@@ -801,13 +801,13 @@ rule-providers:
   Developer:
     type: http
     behavior: classical
-    url: https://gh-proxy.com/https://raw.githubusercontent.com/xiaobaiyey/rules/refs/heads/main/Providers/Developer.yml
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/g2x-cmd/rules/refs/heads/main/Providers/Developer.yml
     path: ./providers/developer.yaml
     interval: 86400
   Web3:
     type: http
     behavior: classical
-    url: https://gh-proxy.com/https://raw.githubusercontent.com/xiaobaiyey/rules/refs/heads/main/Providers/Web3.yml
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/g2x-cmd/rules/refs/heads/main/Providers/Web3.yml
     path: ./providers/web3.yaml
     interval: 86400
   category-ads-all:
@@ -913,13 +913,13 @@ rule-providers:
   Khan:
     type: http
     behavior: classical
-    url: https://gh-proxy.com/https://raw.githubusercontent.com/xiaobaiyey/rules/refs/heads/main/Providers/Khan.yml
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/g2x-cmd/rules/refs/heads/main/Providers/Khan.yml
     path: ./providers/Khan.yaml
     interval: 86400
   Edutools:
     type: http
     behavior: classical
-    url: https://gh-proxy.com/https://raw.githubusercontent.com/xiaobaiyey/rules/refs/heads/main/Providers/Edutools.yml
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/g2x-cmd/rules/refs/heads/main/Providers/Edutools.yml
     path: ./providers/Edutools.yaml
     interval: 86400
   Telegram:
