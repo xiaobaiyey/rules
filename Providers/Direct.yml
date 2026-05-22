@@ -2,4 +2,5 @@ payload:
   #最好实名，这玩意走代理，会让你实名认证
   - DOMAIN-SUFFIX,yecaoyun.com 
   - DOMAIN-SUFFIX,nexc.top
+  - DOMAIN-SUFFIX,zytt.top
 
