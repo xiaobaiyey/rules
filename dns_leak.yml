@@ -144,6 +144,8 @@ dns:
     - cast.google.com
     - chromecast.local
     - '*.smartdevices.com'
+    - '*.zytt.top'
+    - '*.nexc.top'
 proxies: null
 proxy-groups:
   - name: 🚀 节点选择
